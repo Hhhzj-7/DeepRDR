@@ -1,4 +1,4 @@
-# DeepLMI
+# DeepRDR
 
 DeepRDR: ncRNA-Drug Resistance Prediction via Cross-Context Contrastive Learning and Gated Cross Fusion
 
