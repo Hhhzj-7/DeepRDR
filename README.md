@@ -44,6 +44,12 @@ DeepRDR/
 
 ---
 
+## Input Data Formats
+
+Input files are stored in `Data/`. Both `ncrna-drug_split.csv` and `adj_with_sens.csv` are ncRNA-by-drug matrices, with ncRNA identifiers in the first column and drug names in the header; `1` denotes resistance-associated pairs and `0` denotes unlabelled pairs, while `adj_with_sens.csv` additionally uses `-1` for sensitivity-associated pairs. `drug_smiles.csv` contains two columns, `name` and `smiles`, providing drug identifiers and SMILES strings. `rna_sequences.fasta` contains ncRNA nucleotide sequences in FASTA format. Drug names must match the matrix column names; the original sequence loader requires the entire FASTA header after `>` to match the corresponding ncRNA identifier, so alias-containing headers must be resolved before preprocessing. The two matrices must have identical row and column ordering. For standard cross-validation, `fold_info.pickle` stores per-fold arrays of zero-based `(RNA index, drug index)` pairs under `pos_train_ij_list`, `pos_test_ij_list`, `unlabelled_train_ij_list`, and `unlabelled_test_ij_list`. `processed_data_cache.pkl` is a generated feature cache and should be rebuilt when input data or identifier mappings change.
+
+---
+
 ## Environment
 
 Create a new conda environment:
